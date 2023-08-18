@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myfirstapp
+  annotations:
+    service.beta.kubernetes.io/azure-dns-label-name: myfirstapp
+spec:
+  selector:
+    app: myfirstapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
