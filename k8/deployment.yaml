@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myfirstapplication
+  labels:
+    app: myfirstapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myfirstapp
+  template:
+    metadata:
+      labels:
+        app: myfirstapp
+    spec:
+      containers:
+      - name: myfirstapp
+        image: ecrdemo0818.azurecr.io/notetaker:0818.1
+        env:
+        - name: PORT
+          value: "80"
+        ports:
+        - containerPort: 80
