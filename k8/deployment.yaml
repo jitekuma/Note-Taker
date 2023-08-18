@@ -17,5 +17,8 @@ spec:
       containers:
       - name: myfirstapp
         image: ecrdemo0818.azurecr.io/notetaker:0818.1
+        env:
+        - name: PORT
+          value: "80"
         ports:
         - containerPort: 80
